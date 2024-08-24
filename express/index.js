@@ -1,6 +1,7 @@
 import express from "express"
+import "dotenv/config"
 const app =express()
-const port = 3000
+const port = process.env. PORT ||6000
 
 app.use(express.json())
 
@@ -46,10 +47,6 @@ app.delete('/teas/:id', (req, res)=>{
         return res.status(404).send("tea not found")
     }
 })
-
-
-
-
 
 
 app.listen(port, ()=>{
